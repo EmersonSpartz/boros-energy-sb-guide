@@ -103,6 +103,8 @@ body {
 .mc .ms { font-size: 11px; }
 .dl-card { display: flex; align-items: center; gap: 4px; }
 .dl-qty { color: #555; min-width: 12px; }
+.mu-colors { display: flex; gap: 2px; flex-shrink: 0; }
+.mu-colors .ms { font-size: 14px; }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mana-font@latest/css/mana.css">
 </head>
@@ -121,7 +123,7 @@ body {
 <div class="matchup" data-name="mirror boros mardu energy">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">1</span>
-    <span class="matchup-name">vs. Mirror (Boros / Mardu)</span>
+    <span class="mu-colors"><i class="ms ms-r ms-cost"></i><i class="ms ms-w ms-cost"></i></span><span class="matchup-name">vs. Mirror (Boros / Mardu)</span>
     <div class="badge-row"><span class="guide-badge">9 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -401,7 +403,7 @@ body {
 <div class="matchup" data-name="eldrazi ramp temur">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">2</span>
-    <span class="matchup-name">vs. Eldrazi Ramp</span>
+    <span class="mu-colors"><i class="ms ms-c ms-cost"></i><i class="ms ms-g ms-cost"></i></span><span class="matchup-name">vs. Eldrazi Ramp</span>
     <div class="badge-row"><span class="guide-badge">8 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -613,7 +615,7 @@ body {
 <div class="matchup" data-name="amulet titan primeval">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">3</span>
-    <span class="matchup-name">vs. Amulet Titan</span>
+    <span class="mu-colors"><i class="ms ms-g ms-cost"></i></span><span class="matchup-name">vs. Amulet Titan</span>
     <div class="badge-row"><span class="guide-badge">8 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -837,7 +839,7 @@ body {
 <div class="matchup" data-name="dimir esper frog murktide oculus ub">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">4</span>
-    <span class="matchup-name">vs. Dimir / Esper (Frog, Oculus, Murktide)</span>
+    <span class="mu-colors"><i class="ms ms-u ms-cost"></i><i class="ms ms-b ms-cost"></i></span><span class="matchup-name">vs. Dimir / Esper (Frog, Oculus, Murktide)</span>
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -983,7 +985,7 @@ body {
 <div class="matchup" data-name="golgari yawgmoth yawg">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">5</span>
-    <span class="matchup-name">vs. Golgari Yawgmoth</span>
+    <span class="mu-colors"><i class="ms ms-b ms-cost"></i><i class="ms ms-g ms-cost"></i></span><span class="matchup-name">vs. Golgari Yawgmoth</span>
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -1152,7 +1154,7 @@ body {
 <div class="matchup" data-name="broodscale combo mono green">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">6</span>
-    <span class="matchup-name">vs. Broodscale Combo</span>
+    <span class="mu-colors"><i class="ms ms-c ms-cost"></i><i class="ms ms-g ms-cost"></i></span><span class="matchup-name">vs. Broodscale Combo</span>
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -1331,7 +1333,7 @@ body {
 <div class="matchup" data-name="ruby storm izzet">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">7</span>
-    <span class="matchup-name">vs. Ruby / Izzet Storm</span>
+    <span class="mu-colors"><i class="ms ms-r ms-cost"></i></span><span class="matchup-name">vs. Ruby / Izzet Storm</span>
     <div class="badge-row"><span class="guide-badge">6 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -1509,7 +1511,7 @@ body {
 <div class="matchup" data-name="charbelcher belcher combo">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">8</span>
-    <span class="matchup-name">vs. Charbelcher</span>
+    <span class="mu-colors"><i class="ms ms-u ms-cost"></i></span><span class="matchup-name">vs. Charbelcher</span>
     <div class="badge-row"><span class="guide-badge">7 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -1715,7 +1717,7 @@ body {
 <div class="matchup" data-name="orzhov esper blink sewers ephemerate jeskai ketramose">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">9</span>
-    <span class="matchup-name">vs. Orzhov / Esper Blink (Sewers)</span>
+    <span class="mu-colors"><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost"></i><i class="ms ms-b ms-cost"></i></span><span class="matchup-name">vs. Orzhov / Esper Blink (Sewers)</span>
     <div class="badge-row"><span class="guide-badge">7 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -1905,7 +1907,7 @@ body {
 <div class="matchup" data-name="domain zoo leyline scion">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">10</span>
-    <span class="matchup-name">vs. Domain Zoo</span>
+    <span class="mu-colors"><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost"></i><i class="ms ms-b ms-cost"></i><i class="ms ms-r ms-cost"></i><i class="ms ms-g ms-cost"></i></span><span class="matchup-name">vs. Domain Zoo</span>
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -2075,7 +2077,7 @@ body {
 <div class="matchup" data-name="domain rhinos cascade crashing footfalls">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">11</span>
-    <span class="matchup-name">vs. Domain Rhinos</span>
+    <span class="mu-colors"><i class="ms ms-u ms-cost"></i><i class="ms ms-r ms-cost"></i><i class="ms ms-g ms-cost"></i></span><span class="matchup-name">vs. Domain Rhinos</span>
     <div class="badge-row"><span class="guide-badge">4 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -2213,7 +2215,7 @@ body {
 <div class="matchup" data-name="red prowess izzet ur burn cori-steel">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">12</span>
-    <span class="matchup-name">vs. Red-Based Prowess (UR)</span>
+    <span class="mu-colors"><i class="ms ms-u ms-cost"></i><i class="ms ms-r ms-cost"></i></span><span class="matchup-name">vs. Red-Based Prowess (UR)</span>
     <div class="badge-row"><span class="guide-badge">6 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -2398,7 +2400,7 @@ body {
 <div class="matchup" data-name="four color creativity indomitable">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">13</span>
-    <span class="matchup-name">vs. Four-Color Creativity</span>
+    <span class="mu-colors"><i class="ms ms-w ms-cost"></i><i class="ms ms-b ms-cost"></i><i class="ms ms-r ms-cost"></i><i class="ms ms-g ms-cost"></i></span><span class="matchup-name">vs. Four-Color Creativity</span>
     <div class="badge-row"><span class="guide-badge">1 guide</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -2480,7 +2482,7 @@ body {
 <div class="matchup" data-name="goryos vengeance reanimator graveyard emrakul">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">14</span>
-    <span class="matchup-name">vs. Goryo's Vengeance</span>
+    <span class="mu-colors"><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost"></i><i class="ms ms-b ms-cost"></i></span><span class="matchup-name">vs. Goryo's Vengeance</span>
     <div class="badge-row"><span class="guide-badge">3 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -2591,7 +2593,7 @@ body {
 <div class="matchup" data-name="control azorius jeskai counterspells wraths">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">15</span>
-    <span class="matchup-name">vs. Control (Azorius / Jeskai)</span>
+    <span class="mu-colors"><i class="ms ms-w ms-cost"></i><i class="ms ms-u ms-cost"></i><i class="ms ms-r ms-cost"></i></span><span class="matchup-name">vs. Control (Azorius / Jeskai)</span>
     <div class="badge-row"><span class="guide-badge">3 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -2724,7 +2726,7 @@ body {
 <div class="matchup" data-name="affinity hardened scales urza artifact kappa">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">16</span>
-    <span class="matchup-name">vs. Affinity / Hardened Scales</span>
+    <span class="mu-colors"><i class="ms ms-u ms-cost"></i><i class="ms ms-r ms-cost"></i></span><span class="matchup-name">vs. Affinity / Hardened Scales</span>
     <div class="badge-row"><span class="guide-badge">2 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -2843,7 +2845,7 @@ body {
 <div class="matchup" data-name="eldrazi tron urza tower ugin karn">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">17</span>
-    <span class="matchup-name">vs. Eldrazi Tron</span>
+    <span class="mu-colors"><i class="ms ms-c ms-cost"></i></span><span class="matchup-name">vs. Eldrazi Tron</span>
     <div class="badge-row"><span class="guide-badge">2 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
@@ -2938,7 +2940,7 @@ body {
 <div class="matchup" data-name="neoform neobrand griselbrand eldritch evolution combo">
   <div class="matchup-head" onclick="toggle(this)">
     <span class="rank">18</span>
-    <span class="matchup-name">vs. Neoform / Neobrand</span>
+    <span class="mu-colors"><i class="ms ms-u ms-cost"></i><i class="ms ms-g ms-cost"></i></span><span class="matchup-name">vs. Neoform / Neobrand</span>
     <div class="badge-row"><span class="guide-badge">2 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
