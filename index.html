@@ -81,18 +81,27 @@ body {
 
 .no-results { text-align: center; color: #333; padding: 48px 20px; font-size: 14px; }
 .section-div { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #2a2a2a; padding: 16px 16px 4px; background: #0a0a0a; }
-.opp-sb { background: #111; border: 1px solid #1a1a1a; border-radius: 7px; padding: 8px 11px; margin-bottom: 10px; }
-.opp-sb-head { font-size: 11px; font-weight: 600; color: #666; margin-bottom: 6px; }
+.enemy-section { background: #0f0f0f; border: 1px solid #2a2215; border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+.enemy-toggle { display: flex; align-items: center; padding: 9px 12px; cursor: pointer; -webkit-tap-highlight-color: transparent; user-select: none; }
+.enemy-toggle-label { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #a08030; flex: 1; }
+.enemy-arrow { font-size: 9px; color: #a08030; transition: transform 0.2s; display: inline-block; }
+.enemy-section.open .enemy-arrow { transform: rotate(90deg); }
+.enemy-body { display: none; padding: 0 12px 10px; }
+.enemy-section.open .enemy-body { display: block; }
+.enemy-sub { font-size: 10px; font-weight: 700; color: #665530; text-transform: uppercase; letter-spacing: 0.5px; margin: 10px 0 5px; }
+.enemy-sub:first-child { margin-top: 2px; }
+.opp-sb { background: transparent; border: none; border-radius: 0; padding: 0; margin-bottom: 0; }
+.opp-sb-head { display: none; }
 .opp-sb-src { font-size: 9px; color: #333; margin-left: 4px; }
 .opp-sb-cards { display: flex; flex-wrap: wrap; gap: 4px; }
 .opp-card { font-size: 11px; color: #888; background: #1a1a1a; padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
 .opp-card.dim { opacity: 0.5; }
 .opp-pct { font-size: 9px; color: #555; }
-.opp-deck { background: #111; border: 1px solid #1a1a1a; border-radius: 7px; margin-bottom: 10px; cursor: pointer; }
-.opp-deck-head { font-size: 11px; font-weight: 600; color: #555; padding: 8px 11px; }
+.opp-deck { background: transparent; border: none; border-radius: 0; margin: 8px 0 0; cursor: pointer; }
+.opp-deck-head { font-size: 11px; font-weight: 600; color: #555; padding: 0; }
 .opp-deck-arrow { font-size: 9px; transition: transform 0.2s; display: inline-block; }
 .opp-deck.open .opp-deck-arrow { transform: rotate(90deg); }
-.opp-deck-body { display: none; padding: 0 11px 8px; }
+.opp-deck-body { display: none; padding: 4px 0 0; }
 .opp-deck.open .opp-deck-body { display: flex; gap: 12px; }
 .dl-col { flex: 1; min-width: 0; }
 .dl-label { font-size: 10px; font-weight: 700; color: #444; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
@@ -105,8 +114,8 @@ body {
 .dl-qty { color: #555; min-width: 12px; }
 .mu-colors { display: flex; gap: 2px; flex-shrink: 0; }
 .mu-colors .ms { font-size: 14px; }
-.opp-plan { background: #131313; border: 1px solid #1c1a14; border-radius: 7px; padding: 8px 11px; margin-bottom: 10px; }
-.opp-plan-head { font-size: 11px; font-weight: 600; color: #a08030; margin-bottom: 6px; }
+.opp-plan { background: transparent; border: none; border-radius: 0; padding: 0; margin-bottom: 0; }
+.opp-plan-head { font-size: 11px; font-weight: 600; color: #a08030; margin-bottom: 6px; display: none; }
 .opp-plan-label { font-size: 10px; font-weight: 600; color: #666; margin-top: 5px; }
 .opp-plan-in { font-size: 11px; color: #5a8a5a; margin: 2px 0; }
 .opp-plan-out { font-size: 11px; color: #8a5a5a; margin: 2px 0; }
@@ -118,7 +127,7 @@ body {
 
 <div class="top-bar">
   <h1>Boros Energy · Sideboard Guide</h1>
-  <div class="subtitle">Modern · post-ban · 6 guides · Aug 2025</div>
+  <div class="subtitle">Modern · 20 matchups · 8 authors · Know Your Enemy™</div>
   <input type="text" id="search" placeholder="Search matchup…" oninput="filterMatchups()" autocomplete="off" autocorrect="off" spellcheck="false">
 </div>
 
@@ -133,11 +142,19 @@ body {
     <div class="badge-row"><span class="guide-badge">9 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Boros Energy Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">2x Wrath of the Skies <span class="opp-pct">99%</span></span> <span class="opp-card">2x Wear // Tear <span class="opp-pct">97%</span></span> <span class="opp-card">2x Celestial Purge <span class="opp-pct">93%</span></span> <span class="opp-card">3x Obsidian Charmaw <span class="opp-pct">90%</span></span> <span class="opp-card">2x The Legend of Roku <span class="opp-pct">86%</span></span> <span class="opp-card">2x Orim's Chant <span class="opp-pct">77%</span></span> <span class="opp-card">1x Blood Moon <span class="opp-pct">67%</span></span> <span class="opp-card">1x Surgical Extraction <span class="opp-pct">67%</span></span> <span class="opp-card">2x High Noon <span class="opp-pct">56%</span></span> <span class="opp-card dim">2x Damping Sphere <span class="opp-pct">34%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Boros Energy Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -192,7 +209,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="consensus-box">
+      </div>
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus (2+ guides agree)</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -413,11 +432,19 @@ body {
     <div class="badge-row"><span class="guide-badge">8 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Eldrazi Ramp Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">2x Unholy Heat <span class="opp-pct">94%</span></span> <span class="opp-card">2x Trinisphere <span class="opp-pct">94%</span></span> <span class="opp-card">2x Vexing Bauble <span class="opp-pct">86%</span></span> <span class="opp-card">2x Disruptor Flute <span class="opp-pct">74%</span></span> <span class="opp-card">2x Fade from History <span class="opp-pct">71%</span></span> <span class="opp-card">1x Soulless Jailer <span class="opp-pct">65%</span></span> <span class="opp-card dim">1x Grafdigger's Cage <span class="opp-pct">45%</span></span> <span class="opp-card dim">2x Nature's Claim <span class="opp-pct">36%</span></span> <span class="opp-card dim">2x Dismember <span class="opp-pct">35%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Eldrazi Ramp Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -472,7 +499,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="consensus-box">
+      </div>
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -625,11 +654,26 @@ body {
     <div class="badge-row"><span class="guide-badge">8 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">What They Bring In</div>
+<div class="opp-plan">
+      <div class="opp-plan-head">What Amulet Brings In Against You <span class="opp-sb-src">Draftsim / MTG Decks</span></div>
+      <div class="opp-plan-in">IN: +3 Dismember, +2 Fire Magic</div>
+      <div class="opp-plan-out">OUT: -3 Arboreal Grazer, -2 Explore</div>
+      <div class="opp-plan-note">They shift from ramp to removal + combo. Fire Magic sweeps your small creatures. Expect fewer blockers, faster Titans.</div>
+      </div>
+<div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Amulet Titan Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">2x Force of Vigor <span class="opp-pct">99%</span></span> <span class="opp-card">3x Dismember <span class="opp-pct">97%</span></span> <span class="opp-card">2x Vexing Bauble <span class="opp-pct">95%</span></span> <span class="opp-card">1x Six <span class="opp-pct">90%</span></span> <span class="opp-card">1x Bojuka Bog <span class="opp-pct">78%</span></span> <span class="opp-card">1x Boseiju, Who Endures <span class="opp-pct">63%</span></span> <span class="opp-card">1x Collector Ouphe <span class="opp-pct">63%</span></span> <span class="opp-card dim">2x Soulless Jailer <span class="opp-pct">45%</span></span> <span class="opp-card dim">2x Vampires' Vengeance <span class="opp-pct">39%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Amulet Titan Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -689,13 +733,9 @@ body {
         </div>
       </div>
     </div>
-<div class="opp-plan">
-      <div class="opp-plan-head">What Amulet Brings In Against You <span class="opp-sb-src">Draftsim / MTG Decks</span></div>
-      <div class="opp-plan-in">IN: +3 Dismember, +2 Fire Magic</div>
-      <div class="opp-plan-out">OUT: -3 Arboreal Grazer, -2 Explore</div>
-      <div class="opp-plan-note">They shift from ramp to removal + combo. Fire Magic sweeps your small creatures. Expect fewer blockers, faster Titans.</div>
       </div>
-    <div class="consensus-box">
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -855,11 +895,19 @@ body {
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Dimir Murktide Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">4x Consign to Memory <span class="opp-pct">83%</span></span> <span class="opp-card">2x Mystical Dispute <span class="opp-pct">83%</span></span> <span class="opp-card">2x Engineered Explosives <span class="opp-pct">67%</span></span> <span class="opp-card">2x Stern Scolding <span class="opp-pct">50%</span></span> <span class="opp-card">2x Surgical Extraction <span class="opp-pct">50%</span></span> <span class="opp-card">2x Harbinger of the Seas <span class="opp-pct">50%</span></span> <span class="opp-card dim">2x Nihil Spellbomb <span class="opp-pct">33%</span></span> <span class="opp-card dim">2x Damping Sphere <span class="opp-pct">33%</span></span> <span class="opp-card dim">2x Toxic Deluge <span class="opp-pct">33%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Dimir Murktide Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -901,7 +949,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="consensus-box">
+      </div>
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -1001,11 +1051,19 @@ body {
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Golgari Yawgmoth Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">2x Force of Vigor <span class="opp-pct">98%</span></span> <span class="opp-card">2x Thoughtseize <span class="opp-pct">92%</span></span> <span class="opp-card">3x Fatal Push <span class="opp-pct">88%</span></span> <span class="opp-card">1x Vexing Bauble <span class="opp-pct">88%</span></span> <span class="opp-card">2x Fulminator Mage <span class="opp-pct">53%</span></span> <span class="opp-card">1x Outland Liberator <span class="opp-pct">51%</span></span> <span class="opp-card">1x Soulless Jailer <span class="opp-pct">51%</span></span> <span class="opp-card">1x Endurance <span class="opp-pct">51%</span></span> <span class="opp-card dim">1x Scavenging Ooze <span class="opp-pct">47%</span></span> <span class="opp-card dim">1x Murderous Cut <span class="opp-pct">47%</span></span> <span class="opp-card dim">2x Ashiok, Dream Render <span class="opp-pct">35%</span></span> <span class="opp-card dim">2x Damping Sphere <span class="opp-pct">33%</span></span> <span class="opp-card dim">1x Gaddock Teeg <span class="opp-pct">33%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Golgari Yawgmoth Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -1060,7 +1118,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="consensus-box">
+      </div>
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -1170,11 +1230,19 @@ body {
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Broodscale Combo Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">1x Grafdigger's Cage <span class="opp-pct">100%</span></span> <span class="opp-card">1x Pithing Needle <span class="opp-pct">100%</span></span> <span class="opp-card">2x Vexing Bauble <span class="opp-pct">100%</span></span> <span class="opp-card">2x Soulless Jailer <span class="opp-pct">100%</span></span> <span class="opp-card">2x Dismember <span class="opp-pct">94%</span></span> <span class="opp-card">2x Cavern of Souls <span class="opp-pct">88%</span></span> <span class="opp-card">2x Pick Your Poison <span class="opp-pct">88%</span></span> <span class="opp-card">2x Thief of Existence <span class="opp-pct">88%</span></span> <span class="opp-card">1x Gemstone Caverns <span class="opp-pct">56%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Broodscale Combo Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -1223,7 +1291,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="consensus-box">
+      </div>
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -1349,11 +1419,24 @@ body {
     <div class="badge-row"><span class="guide-badge">6 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">What They Bring In</div>
+<div class="opp-plan">
+      <div class="opp-plan-head">What Ruby Storm Brings In Against You <span class="opp-sb-src">Reverse-engineered from Boros guides</span></div>
+      <div class="opp-plan-note">Expect Prismatic Ending (hits Deafening Silence, Drannith Magistrate), Orim's Chant (stops your interaction on combo turn), Brotherhood's End (sweeps your board), Wear // Tear (answers hate pieces). They cut slow cards and lean into speed + answers for your hate.</div>
+      </div>
+<div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Ruby Storm Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">1x Past in Flames <span class="opp-pct">100%</span></span> <span class="opp-card">1x Grapeshot <span class="opp-pct">97%</span></span> <span class="opp-card">1x Empty the Warrens <span class="opp-pct">96%</span></span> <span class="opp-card">3x Prismatic Ending <span class="opp-pct">93%</span></span> <span class="opp-card">2x Wear // Tear <span class="opp-pct">83%</span></span> <span class="opp-card">4x Orim's Chant <span class="opp-pct">81%</span></span> <span class="opp-card">2x Brotherhood's End <span class="opp-pct">80%</span></span> <span class="opp-card dim">2x Untimely Malfunction <span class="opp-pct">35%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Ruby Storm Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -1403,11 +1486,9 @@ body {
         </div>
       </div>
     </div>
-<div class="opp-plan">
-      <div class="opp-plan-head">What Ruby Storm Brings In Against You <span class="opp-sb-src">Reverse-engineered from Boros guides</span></div>
-      <div class="opp-plan-note">Expect Prismatic Ending (hits Deafening Silence, Drannith Magistrate), Orim's Chant (stops your interaction on combo turn), Brotherhood's End (sweeps your board), Wear // Tear (answers hate pieces). They cut slow cards and lean into speed + answers for your hate.</div>
       </div>
-    <div class="consensus-box">
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -1531,11 +1612,19 @@ body {
     <div class="badge-row"><span class="guide-badge">7 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Charbelcher Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">3x Consign to Memory <span class="opp-pct">91%</span></span> <span class="opp-card">2x Mystical Dispute <span class="opp-pct">84%</span></span> <span class="opp-card">2x Harbinger of the Seas <span class="opp-pct">80%</span></span> <span class="opp-card">1x Tezzeret the Seeker <span class="opp-pct">77%</span></span> <span class="opp-card">2x Flusterstorm <span class="opp-pct">68%</span></span> <span class="opp-card">2x Hurkyl's Recall <span class="opp-pct">61%</span></span> <span class="opp-card">2x Into the Flood Maw <span class="opp-pct">53%</span></span> <span class="opp-card dim">1x Mountain <span class="opp-pct">47%</span></span> <span class="opp-card dim">1x Unable to Scream <span class="opp-pct">36%</span></span> <span class="opp-card dim">1x Island <span class="opp-pct">33%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Charbelcher Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -1585,7 +1674,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="consensus-box">
+      </div>
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -1737,11 +1828,30 @@ body {
     <div class="badge-row"><span class="guide-badge">7 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">What They Bring In</div>
+<div class="opp-plan">
+      <div class="opp-plan-head">What Jeskai Blink Brings In Against You <span class="opp-sb-src">RIW Hobbies</span></div>
+      <div class="opp-plan-label">With Ragavan build</div>
+      <div class="opp-plan-in">IN: +1 Fable of the Mirror-Breaker, +2 Wrath of the Skies, +1 Celestial Purge, +2 Subtlety, +1 Soul-Guide Lantern</div>
+      <div class="opp-plan-out">OUT: -2 Consign to Memory, -2 Teferi, Time Raveler, -2 Force of Negation, -1 Strix Serenade</div>
+      <div class="opp-plan-label">No Ragavan build</div>
+      <div class="opp-plan-in">IN: +2 Wrath of the Skies, +1 Aether Gust, +1 Spell Snare, +1 Celestial Purge, +1 Soul-Guide Lantern</div>
+      <div class="opp-plan-out">OUT: -1 Consign to Memory, -3 Teferi, Time Raveler, -1 Strix Serenade, -1 Phelia, Exuberant Shepherd</div>
+      <div class="opp-plan-note">Teferi always comes out — weak vs creature aggro. They lean on Wrath of the Skies and spot removal. Watch for Soul-Guide Lantern (answers Phlage). Fetch basics early — they fear your Blood Moon.</div>
+      </div>
+<div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Esper Blink Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">3x Consign to Memory <span class="opp-pct">100%</span></span> <span class="opp-card">3x Wrath of the Skies <span class="opp-pct">100%</span></span> <span class="opp-card">3x Damping Sphere <span class="opp-pct">90%</span></span> <span class="opp-card">2x Mystical Dispute <span class="opp-pct">85%</span></span> <span class="opp-card">3x High Noon <span class="opp-pct">64%</span></span> <span class="opp-card dim">2x Clarion Conqueror <span class="opp-pct">41%</span></span> <span class="opp-card dim">1x Prismatic Ending <span class="opp-pct">34%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Esper Blink Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -1792,17 +1902,9 @@ body {
         </div>
       </div>
     </div>
-<div class="opp-plan">
-      <div class="opp-plan-head">What Jeskai Blink Brings In Against You <span class="opp-sb-src">RIW Hobbies</span></div>
-      <div class="opp-plan-label">With Ragavan build</div>
-      <div class="opp-plan-in">IN: +1 Fable of the Mirror-Breaker, +2 Wrath of the Skies, +1 Celestial Purge, +2 Subtlety, +1 Soul-Guide Lantern</div>
-      <div class="opp-plan-out">OUT: -2 Consign to Memory, -2 Teferi, Time Raveler, -2 Force of Negation, -1 Strix Serenade</div>
-      <div class="opp-plan-label">No Ragavan build</div>
-      <div class="opp-plan-in">IN: +2 Wrath of the Skies, +1 Aether Gust, +1 Spell Snare, +1 Celestial Purge, +1 Soul-Guide Lantern</div>
-      <div class="opp-plan-out">OUT: -1 Consign to Memory, -3 Teferi, Time Raveler, -1 Strix Serenade, -1 Phelia, Exuberant Shepherd</div>
-      <div class="opp-plan-note">Teferi always comes out — weak vs creature aggro. They lean on Wrath of the Skies and spot removal. Watch for Soul-Guide Lantern (answers Phlage). Fetch basics early — they fear your Blood Moon.</div>
       </div>
-    <div class="consensus-box">
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -1937,11 +2039,19 @@ body {
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Domain Zoo Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">2x Consign to Memory <span class="opp-pct">93%</span></span> <span class="opp-card">1x Wear // Tear <span class="opp-pct">87%</span></span> <span class="opp-card">2x Damping Sphere <span class="opp-pct">83%</span></span> <span class="opp-card">2x Wrath of the Skies <span class="opp-pct">83%</span></span> <span class="opp-card">2x Mystical Dispute <span class="opp-pct">79%</span></span> <span class="opp-card">1x Nihil Spellbomb <span class="opp-pct">69%</span></span> <span class="opp-card dim">2x Obsidian Charmaw <span class="opp-pct">48%</span></span> <span class="opp-card dim">2x Surgical Extraction <span class="opp-pct">44%</span></span> <span class="opp-card dim">2x Pyroclasm <span class="opp-pct">35%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Domain Zoo Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -1994,7 +2104,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="consensus-box">
+      </div>
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -2107,11 +2219,19 @@ body {
     <div class="badge-row"><span class="guide-badge">4 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Crashing Footfalls Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">2x Weather the Storm</span> <span class="opp-card">2x Harbinger of the Seas</span> <span class="opp-card">4x Force of Negation</span> <span class="opp-card">2x Consign to Memory</span> <span class="opp-card">2x Commandeer</span> <span class="opp-card">3x Dismember</span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Crashing Footfalls Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -2157,7 +2277,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="consensus-box">
+      </div>
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -2245,11 +2367,19 @@ body {
     <div class="badge-row"><span class="guide-badge">6 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Izzet Prowess Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">4x Consign to Memory <span class="opp-pct">100%</span></span> <span class="opp-card">3x Unholy Heat <span class="opp-pct">100%</span></span> <span class="opp-card">2x Surgical Extraction <span class="opp-pct">95%</span></span> <span class="opp-card">2x Meltdown <span class="opp-pct">87%</span></span> <span class="opp-card">2x Spell Pierce <span class="opp-pct">82%</span></span> <span class="opp-card">2x Spell Snare <span class="opp-pct">70%</span></span> <span class="opp-card dim">2x Mystical Dispute <span class="opp-pct">48%</span></span> <span class="opp-card dim">2x Murktide Regent <span class="opp-pct">39%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Izzet Prowess Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -2295,7 +2425,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="consensus-box">
+      </div>
+    </div>
+            <div class="consensus-box">
       <div class="consensus-label">Consensus</div>
       <div class="consensus-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -2430,11 +2562,19 @@ body {
     <div class="badge-row"><span class="guide-badge">1 guide</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Indomitable Creativity Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">4x Consign to Memory <span class="opp-pct">100%</span></span> <span class="opp-card">2x Surgical Extraction <span class="opp-pct">93%</span></span> <span class="opp-card">3x High Noon <span class="opp-pct">86%</span></span> <span class="opp-card">3x Brotherhood's End <span class="opp-pct">86%</span></span> <span class="opp-card">1x Veil of Summer <span class="opp-pct">79%</span></span> <span class="opp-card dim">1x Emrakul, the Aeons Torn <span class="opp-pct">43%</span></span> <span class="opp-card dim">1x Xenagos, God of Revels <span class="opp-pct">36%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Indomitable Creativity Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -2488,7 +2628,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="guide-card">
+      </div>
+    </div>
+            <div class="guide-card">
       <div class="guide-head"><span class="g-author">Romeu</span><span class="g-date">Jan 2025</span><span class="g-tag">Cards Realm</span></div>
       <div class="guide-cols">
         <div class="col-in"><div class="col-head">IN</div>
@@ -2512,11 +2654,30 @@ body {
     <div class="badge-row"><span class="guide-badge">3 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">What They Bring In</div>
+<div class="opp-plan">
+      <div class="opp-plan-head">What Goryo's Brings In Against You <span class="opp-sb-src">RIW Hobbies + Hareruya</span></div>
+      <div class="opp-plan-label">RIW Hobbies</div>
+      <div class="opp-plan-in">IN: +2 Celestial Purge, +1 Fatal Push, +1 Toxic Deluge, +1 Force of Negation, +1 Supreme Verdict, +2 Wrath of the Skies</div>
+      <div class="opp-plan-out">OUT: -3 Psychic Frog, -2 Priest of Fell Rites, -1 Griselbrand, -2 Grief</div>
+      <div class="opp-plan-label">Hareruya</div>
+      <div class="opp-plan-in">IN: +2 Wrath of the Skies, +1 Pest Control, +1 Celestial Purge, +1 Emperor of Bones</div>
+      <div class="opp-plan-out">OUT: -2 Thoughtseize, -1 Spell Pierce, -1 Consign to Memory, -1 Griselbrand</div>
+      <div class="opp-plan-note">They shift to a control plan post-board, not combo. Keep Force of Negation for your Blood Moon. They consider this one of their better matchups.</div>
+      </div>
+<div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Goryo's Vengeance Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">4x Consign to Memory <span class="opp-pct">94%</span></span> <span class="opp-card">3x Mystical Dispute <span class="opp-pct">92%</span></span> <span class="opp-card">3x Wrath of the Skies <span class="opp-pct">91%</span></span> <span class="opp-card">1x Teferi, Time Raveler <span class="opp-pct">75%</span></span> <span class="opp-card">1x Celestial Purge <span class="opp-pct">59%</span></span> <span class="opp-card">1x Surgical Extraction <span class="opp-pct">58%</span></span> <span class="opp-card dim">1x Pest Control <span class="opp-pct">41%</span></span> <span class="opp-card dim">1x Ashiok, Dream Render <span class="opp-pct">37%</span></span> <span class="opp-card dim">1x Force of Negation <span class="opp-pct">35%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Goryo's Vengeance Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -2573,17 +2734,9 @@ body {
         </div>
       </div>
     </div>
-<div class="opp-plan">
-      <div class="opp-plan-head">What Goryo's Brings In Against You <span class="opp-sb-src">RIW Hobbies + Hareruya</span></div>
-      <div class="opp-plan-label">RIW Hobbies</div>
-      <div class="opp-plan-in">IN: +2 Celestial Purge, +1 Fatal Push, +1 Toxic Deluge, +1 Force of Negation, +1 Supreme Verdict, +2 Wrath of the Skies</div>
-      <div class="opp-plan-out">OUT: -3 Psychic Frog, -2 Priest of Fell Rites, -1 Griselbrand, -2 Grief</div>
-      <div class="opp-plan-label">Hareruya</div>
-      <div class="opp-plan-in">IN: +2 Wrath of the Skies, +1 Pest Control, +1 Celestial Purge, +1 Emperor of Bones</div>
-      <div class="opp-plan-out">OUT: -2 Thoughtseize, -1 Spell Pierce, -1 Consign to Memory, -1 Griselbrand</div>
-      <div class="opp-plan-note">They shift to a control plan post-board, not combo. Keep Force of Negation for your Blood Moon. They consider this one of their better matchups.</div>
       </div>
-    <div class="guides-label">By Guide</div>
+    </div>
+            <div class="guides-label">By Guide</div>
     <div class="guide-card">
       <div class="guide-head"><span class="g-author">JP Clark</span><span class="g-date">2025</span><span class="g-tag">Google Doc</span></div>
       <div class="guide-cols">
@@ -2633,11 +2786,19 @@ body {
     <div class="badge-row"><span class="guide-badge">3 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Jeskai Control Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">4x Consign to Memory <span class="opp-pct">96%</span></span> <span class="opp-card">1x Surgical Extraction <span class="opp-pct">70%</span></span> <span class="opp-card">2x Wrath of the Skies <span class="opp-pct">70%</span></span> <span class="opp-card">2x Mystical Dispute <span class="opp-pct">70%</span></span> <span class="opp-card">1x Celestial Purge <span class="opp-pct">59%</span></span> <span class="opp-card dim">2x Phlage, Titan of Fire's Fury <span class="opp-pct">44%</span></span> <span class="opp-card dim">3x Damping Sphere <span class="opp-pct">41%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Jeskai Control Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -2696,7 +2857,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="guides-label">By Guide</div>
+      </div>
+    </div>
+            <div class="guides-label">By Guide</div>
     <div class="guide-card">
       <div class="guide-head"><span class="g-author">JP Clark</span><span class="g-date">2025</span><span class="g-tag">Google Doc</span></div>
       <div class="guide-cols">
@@ -2766,11 +2929,24 @@ body {
     <div class="badge-row"><span class="guide-badge">2 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">What They Bring In</div>
+<div class="opp-plan">
+      <div class="opp-plan-head">What Affinity Brings In Against You <span class="opp-sb-src">MTG Decks</span></div>
+      <div class="opp-plan-note">Expect Galvanic Blast (removal + reach), Whipflare (sweeps your x/1s and x/2s), and possibly Blood Moon. They keep Metallic Rebuke for your key spells. Kappa Cannoneer and Urza's Saga are their hardest-to-answer threats.</div>
+      </div>
+<div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Affinity Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">2x Whipflare <span class="opp-pct">94%</span></span> <span class="opp-card">2x Consign to Memory <span class="opp-pct">92%</span></span> <span class="opp-card">2x Damping Sphere <span class="opp-pct">90%</span></span> <span class="opp-card">2x Galvanic Blast <span class="opp-pct">86%</span></span> <span class="opp-card">2x Mystical Dispute <span class="opp-pct">82%</span></span> <span class="opp-card">1x Grafdigger's Cage <span class="opp-pct">70%</span></span> <span class="opp-card">2x Force of Negation <span class="opp-pct">66%</span></span> <span class="opp-card">1x Vexing Bauble <span class="opp-pct">61%</span></span> <span class="opp-card dim">2x Blood Moon <span class="opp-pct">38%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Affinity Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -2826,11 +3002,9 @@ body {
         </div>
       </div>
     </div>
-<div class="opp-plan">
-      <div class="opp-plan-head">What Affinity Brings In Against You <span class="opp-sb-src">MTG Decks</span></div>
-      <div class="opp-plan-note">Expect Galvanic Blast (removal + reach), Whipflare (sweeps your x/1s and x/2s), and possibly Blood Moon. They keep Metallic Rebuke for your key spells. Kappa Cannoneer and Urza's Saga are their hardest-to-answer threats.</div>
       </div>
-    <div class="guides-label">By Guide</div>
+    </div>
+            <div class="guides-label">By Guide</div>
     <div class="guide-card">
       <div class="guide-head"><span class="g-author">PieGonti</span><span class="g-date">2025</span><span class="g-tag">Google Sheets</span></div>
       <div class="otp-tabs">
@@ -2889,11 +3063,24 @@ body {
     <div class="badge-row"><span class="guide-badge">2 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">What They Bring In</div>
+<div class="opp-plan">
+      <div class="opp-plan-head">What Eldrazi Tron Brings In Against You <span class="opp-sb-src">Cardsrealm / MTG Decks</span></div>
+      <div class="opp-plan-note">They typically don't sideboard much — Karn wishboard gives them flexibility already. Chalice of the Void on 1 is devastating. Watch for Trinisphere and All Is Dust.</div>
+      </div>
+<div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Eldrazi Tron Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">1x Tormod's Crypt <span class="opp-pct">100%</span></span> <span class="opp-card">1x Ensnaring Bridge <span class="opp-pct">100%</span></span> <span class="opp-card">1x Liquimetal Coating <span class="opp-pct">98%</span></span> <span class="opp-card">1x Walking Ballista <span class="opp-pct">94%</span></span> <span class="opp-card">2x Disruptor Flute <span class="opp-pct">92%</span></span> <span class="opp-card">1x Cityscape Leveler <span class="opp-pct">92%</span></span> <span class="opp-card">1x The Stone Brain <span class="opp-pct">87%</span></span> <span class="opp-card">1x Torpor Orb <span class="opp-pct">85%</span></span> <span class="opp-card">1x Extinguisher Battleship <span class="opp-pct">84%</span></span> <span class="opp-card">1x Trinisphere <span class="opp-pct">83%</span></span> <span class="opp-card">1x The Filigree Sylex <span class="opp-pct">79%</span></span> <span class="opp-card">1x Chalice of the Void <span class="opp-pct">64%</span></span> <span class="opp-card">1x Skysovereign, Consul Flagship <span class="opp-pct">53%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Eldrazi Tron Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -2942,11 +3129,9 @@ body {
         </div>
       </div>
     </div>
-<div class="opp-plan">
-      <div class="opp-plan-head">What Eldrazi Tron Brings In Against You <span class="opp-sb-src">Cardsrealm / MTG Decks</span></div>
-      <div class="opp-plan-note">They typically don't sideboard much — Karn wishboard gives them flexibility already. Chalice of the Void on 1 is devastating. Watch for Trinisphere and All Is Dust.</div>
       </div>
-    <div class="guides-label">By Guide</div>
+    </div>
+            <div class="guides-label">By Guide</div>
     <div class="guide-card">
       <div class="guide-head"><span class="g-author">PieGonti</span><span class="g-date">2025</span><span class="g-tag">Google Sheets</span></div>
       <div class="guide-cols">
@@ -2988,11 +3173,19 @@ body {
     <div class="badge-row"><span class="guide-badge">2 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Neobrand Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">3x Mystical Dispute <span class="opp-pct">89%</span></span> <span class="opp-card">1x Hooting Mandrills <span class="opp-pct">75%</span></span> <span class="opp-card">1x Elesh Norn, Grand Cenobite <span class="opp-pct">75%</span></span> <span class="opp-card">3x Nature's Claim <span class="opp-pct">74%</span></span> <span class="opp-card">1x Into the Flood Maw <span class="opp-pct">64%</span></span> <span class="opp-card">2x Veil of Summer <span class="opp-pct">64%</span></span> <span class="opp-card">4x Ice-Fang Coatl <span class="opp-pct">52%</span></span> <span class="opp-card">1x Abhorrent Oculus <span class="opp-pct">52%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Neobrand Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -3041,7 +3234,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="guides-label">By Guide</div>
+      </div>
+    </div>
+            <div class="guides-label">By Guide</div>
     <div class="guide-card">
       <div class="guide-head"><span class="g-author">PieGonti</span><span class="g-date">2025</span><span class="g-tag">Google Sheets</span></div>
       <div class="guide-cols">
@@ -3083,11 +3278,30 @@ body {
     <div class="badge-row"><span class="guide-badge">0 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">What They Bring In</div>
+<div class="opp-plan">
+      <div class="opp-plan-head">What Jeskai Blink Brings In Against You <span class="opp-sb-src">RIW Hobbies</span></div>
+      <div class="opp-plan-label">With Ragavan build</div>
+      <div class="opp-plan-in">IN: +1 Fable of the Mirror-Breaker, +2 Wrath of the Skies, +1 Celestial Purge, +2 Subtlety, +1 Soul-Guide Lantern</div>
+      <div class="opp-plan-out">OUT: -2 Consign to Memory, -2 Teferi, Time Raveler, -2 Force of Negation, -1 Strix Serenade</div>
+      <div class="opp-plan-label">No Ragavan build</div>
+      <div class="opp-plan-in">IN: +2 Wrath of the Skies, +1 Aether Gust, +1 Spell Snare, +1 Celestial Purge, +1 Soul-Guide Lantern</div>
+      <div class="opp-plan-out">OUT: -1 Consign to Memory, -3 Teferi, Time Raveler, -1 Strix Serenade, -1 Phelia, Exuberant Shepherd</div>
+      <div class="opp-plan-note">Teferi always comes out — weak vs creature aggro. They lean on Wrath of the Skies and spot removal. Soul-Guide Lantern answers Phlage. Fetch basics early — they fear your Blood Moon.</div>
+    </div>
+<div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Jeskai Blink Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">3x Obsidian Charmaw <span class="opp-pct">100%</span></span> <span class="opp-card">2x Wrath of the Skies <span class="opp-pct">100%</span></span> <span class="opp-card">3x Mystical Dispute <span class="opp-pct">99%</span></span> <span class="opp-card">2x High Noon <span class="opp-pct">95%</span></span> <span class="opp-card">2x Strix Serenade <span class="opp-pct">89%</span></span> <span class="opp-card">1x Celestial Purge <span class="opp-pct">88%</span></span> <span class="opp-card">1x Surgical Extraction <span class="opp-pct">87%</span></span> <span class="opp-card">1x Wear // Tear <span class="opp-pct">51%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Jeskai Blink Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -3142,17 +3356,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="opp-plan">
-      <div class="opp-plan-head">What Jeskai Blink Brings In Against You <span class="opp-sb-src">RIW Hobbies</span></div>
-      <div class="opp-plan-label">With Ragavan build</div>
-      <div class="opp-plan-in">IN: +1 Fable of the Mirror-Breaker, +2 Wrath of the Skies, +1 Celestial Purge, +2 Subtlety, +1 Soul-Guide Lantern</div>
-      <div class="opp-plan-out">OUT: -2 Consign to Memory, -2 Teferi, Time Raveler, -2 Force of Negation, -1 Strix Serenade</div>
-      <div class="opp-plan-label">No Ragavan build</div>
-      <div class="opp-plan-in">IN: +2 Wrath of the Skies, +1 Aether Gust, +1 Spell Snare, +1 Celestial Purge, +1 Soul-Guide Lantern</div>
-      <div class="opp-plan-out">OUT: -1 Consign to Memory, -3 Teferi, Time Raveler, -1 Strix Serenade, -1 Phelia, Exuberant Shepherd</div>
-      <div class="opp-plan-note">Teferi always comes out — weak vs creature aggro. They lean on Wrath of the Skies and spot removal. Soul-Guide Lantern answers Phlage. Fetch basics early — they fear your Blood Moon.</div>
+      </div>
     </div>
-    <div class="guides-label">SIDEBOARD GUIDES</div>
+                <div class="guides-label">SIDEBOARD GUIDES</div>
     <p style="font-size:12px;color:#555;padding:0 11px;">No Boros Energy sideboard guides for this matchup yet. Check <a href="https://flexslot.gg/sideboards" style="color:#a08030;">flexslot.gg</a> for updates.</p>
   </div>
 </div>
@@ -3165,11 +3371,24 @@ body {
     <div class="badge-row"><span class="guide-badge">0 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="opp-sb">
+    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+      <div class="enemy-toggle">
+        <span class="enemy-toggle-label">Know Your Enemy</span>
+        <span class="enemy-arrow">▶</span>
+      </div>
+      <div class="enemy-body">
+        <div class="enemy-sub">What They Bring In</div>
+<div class="opp-plan">
+      <div class="opp-plan-head">What Living End Brings In Against You <span class="opp-sb-src">General patterns</span></div>
+      <div class="opp-plan-note">Living End typically keeps core cascade plan intact vs creature decks. Expect Foundation Breaker for your hate pieces (Soul-Guide Lantern, Ghost Vacuum). Mystical Dispute counters your key spells. Force of Negation stays in to stop Blood Moon. Their Endurance and Subtlety are already mainboard answers to your threats.</div>
+    </div>
+<div class="enemy-sub">Their Sideboard</div>
+<div class="opp-sb">
       <div class="opp-sb-head">Typical Living End Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">3x Mystical Dispute <span class="opp-pct">100%</span></span> <span class="opp-card">2x Inevitable Betrayal <span class="opp-pct">100%</span></span> <span class="opp-card">2x Foundation Breaker <span class="opp-pct">94%</span></span> <span class="opp-card">2x Force of Vigor <span class="opp-pct">79%</span></span> <span class="opp-card">3x Clarion Conqueror <span class="opp-pct">53%</span></span> <span class="opp-card">2x Teferi, Time Raveler <span class="opp-pct">53%</span></span> <span class="opp-card">1x Deafening Silence <span class="opp-pct">51%</span></span> <span class="opp-card dim">1x Harbinger of the Seas <span class="opp-pct">48%</span></span> <span class="opp-card dim">2x Dismember <span class="opp-pct">45%</span></span> <span class="opp-card dim">1x Mai, Scornful Striker <span class="opp-pct">37%</span></span></div>
     </div>
-    <div class="opp-deck" onclick="this.classList.toggle('open')">
+<div class="enemy-sub">Full Decklist</div>
+<div class="opp-deck" onclick="this.classList.toggle('open')">
       <div class="opp-deck-head">Full Living End Decklist <span class="opp-deck-arrow">▶</span></div>
       <div class="opp-deck-body">
         <div class="dl-col">
@@ -3227,11 +3446,9 @@ body {
         </div>
       </div>
     </div>
-    <div class="opp-plan">
-      <div class="opp-plan-head">What Living End Brings In Against You <span class="opp-sb-src">General patterns</span></div>
-      <div class="opp-plan-note">Living End typically keeps core cascade plan intact vs creature decks. Expect Foundation Breaker for your hate pieces (Soul-Guide Lantern, Ghost Vacuum). Mystical Dispute counters your key spells. Force of Negation stays in to stop Blood Moon. Their Endurance and Subtlety are already mainboard answers to your threats.</div>
+      </div>
     </div>
-    <div class="guides-label">SIDEBOARD GUIDES</div>
+                <div class="guides-label">SIDEBOARD GUIDES</div>
     <p style="font-size:12px;color:#555;padding:0 11px;">No Boros Energy sideboard guides for this matchup yet. Check <a href="https://flexslot.gg/sideboards" style="color:#a08030;">flexslot.gg</a> for updates.</p>
   </div>
 </div>
