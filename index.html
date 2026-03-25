@@ -120,6 +120,15 @@ body {
 .opp-plan-in { font-size: 11px; color: #5a8a5a; margin: 2px 0; }
 .opp-plan-out { font-size: 11px; color: #8a5a5a; margin: 2px 0; }
 .opp-plan-note { font-size: 11px; color: #777; margin-top: 6px; line-height: 1.5; }
+.matchup-intel { padding: 8px 12px; border-radius: 7px; margin-bottom: 8px; }
+.matchup-intel.fav-good { background: #0f1a0f; border: 1px solid #1e3e1e; }
+.matchup-intel.fav-even { background: #14140f; border: 1px solid #2a2a1e; }
+.matchup-intel.fav-bad { background: #1a0f0f; border: 1px solid #3e1e1e; }
+.intel-assess { font-size: 12px; font-weight: 700; color: #c8a84b; margin-bottom: 3px; }
+.fav-good .intel-assess { color: #6aaa6a; }
+.fav-even .intel-assess { color: #c8a84b; }
+.fav-bad .intel-assess { color: #c86a6a; }
+.intel-tip { font-size: 11px; color: #888; line-height: 1.4; }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mana-font@latest/css/mana.css">
 </head>
@@ -432,7 +441,11 @@ body {
     <div class="badge-row"><span class="guide-badge">8 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: 68.7% in their favor (MetaMages data)</div>
+      <div class="intel-tip">They may bring Trinisphere (shuts off your 1-drops), Dismember, Kozilek's Return (instant-speed sweeper).</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -659,7 +672,11 @@ body {
     <div class="badge-row"><span class="guide-badge">8 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: They're favored</div>
+      <div class="intel-tip">They shift from ramp to removal + combo. Fire Magic sweeps your small creatures, Dismember handles anything bigger.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -900,7 +917,11 @@ body {
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-even">
+      <div class="intel-assess">Matchup: Close, skill-dependent</div>
+      <div class="intel-tip">They cut Force of Negation and planeswalkers, bring in removal and graveyard hate for Phlage.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -1067,7 +1088,11 @@ body {
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: They're heavily favored vs creature decks with limited removal</div>
+      <div class="intel-tip">No exact IN/OUT found (guides paywalled on Mystical Teachings).</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -1251,7 +1276,11 @@ body {
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-good">
+      <div class="intel-assess">Matchup: One of your better matchups</div>
+      <div class="intel-tip">They should play "delver-esque" — deploy 1-2 threats and hold mana.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -1445,7 +1474,11 @@ body {
     <div class="badge-row"><span class="guide-badge">6 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: They're favored</div>
+      <div class="intel-tip">Turn 2-3 kill potential makes your interaction too slow G1. They bring Prismatic Ending (hits Deafening Silence, Drannith Magistrate), Orim's Chant...</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -1638,7 +1671,11 @@ body {
     <div class="badge-row"><span class="guide-badge">7 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: Race</div>
+      <div class="intel-tip">No exact IN/OUT found (guides paywalled). Expect Harbinger of the Seas (shuts off your DFC lands), Subtlety (pitches to protect combo), Mystical Di...</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -1859,7 +1896,11 @@ body {
     <div class="badge-row"><span class="guide-badge">7 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: ~55% them</div>
+      <div class="intel-tip">Esper cuts ALL Thoughtseize (bad vs aggro), leans on Overlord+Phelia+Solitude loop.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -2073,7 +2114,11 @@ body {
     <div class="badge-row"><span class="guide-badge">5 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-good">
+      <div class="intel-assess">Matchup: You're favored (56% win rate)</div>
+      <div class="intel-tip">They struggle post-board — your Consign to Memory counters Scion of Draco for 1 mana.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -2258,7 +2303,11 @@ body {
     <div class="badge-row"><span class="guide-badge">4 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: Data limited</div>
+      <div class="intel-tip">No free guide covers Boros Energy specifically (guides predate Boros Energy's rise).</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -2411,7 +2460,11 @@ body {
     <div class="badge-row"><span class="guide-badge">6 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: Theoretically Prowess-favored</div>
+      <div class="intel-tip">— they remove threats efficiently and disrupt your synergies.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -2613,7 +2666,11 @@ body {
     <div class="badge-row"><span class="guide-badge">1 guide</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-even">
+      <div class="intel-assess">Matchup: Complicated</div>
+      <div class="intel-tip">No exact IN/OUT found (guides paywalled). Expect Brotherhood's End (sweeps your board), High Noon (slows you), possibly Leyline of the Void.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -2710,7 +2767,11 @@ body {
     <div class="badge-row"><span class="guide-badge">3 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: They're favored</div>
+      <div class="intel-tip">They shift to a control plan post-board — cut combo pieces, bring wraths.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -2842,7 +2903,11 @@ body {
     <div class="badge-row"><span class="guide-badge">3 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-even">
+      <div class="intel-assess">Matchup: Even to slightly them</div>
+      <div class="intel-tip">They cut counterspells for sweepers and removal. Phlage is their best card against you.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -2993,7 +3058,11 @@ body {
     <div class="badge-row"><span class="guide-badge">2 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: Slightly Affinity-favored</div>
+      <div class="intel-tip">Kappa Cannoneer + Urza's Saga are extremely hard to answer. They bring Galvanic Blast (removal + reach), Whipflare (sweeps your x/1s and x/2s), pos...</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -3127,7 +3196,11 @@ body {
     <div class="badge-row"><span class="guide-badge">2 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: They're favored (improved after Amped Raptor ban)</div>
+      <div class="intel-tip">They barely sideboard — Karn wishboard gives them Game 1 access to silver bullets.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -3237,7 +3310,11 @@ body {
     <div class="badge-row"><span class="guide-badge">2 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-even">
+      <div class="intel-assess">Matchup: They're favored G1, closer post-board</div>
+      <div class="intel-tip">They bring in Veil of Summer and creature-based threats (Hooting Mandrills, Hexdrinker) to fight through your hate.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
@@ -3440,7 +3517,11 @@ body {
     <div class="badge-row"><span class="guide-badge">0 guides</span><span class="chevron">▼</span></div>
   </div>
   <div class="matchup-body">
-    <div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
+        <div class="matchup-intel fav-bad">
+      <div class="intel-assess">Matchup: They're favored</div>
+      <div class="intel-tip">"If you want to beat Energy, look no further." They board in Foundation Breaker (answers your graveyard hate), keep Force of Negation for Blood Moon.</div>
+    </div>
+<div class="enemy-section" onclick="if(event.target.closest('.opp-deck'))return;this.classList.toggle('open')">
       <div class="enemy-toggle">
         <span class="enemy-toggle-label">Know Your Enemy</span>
         <span class="enemy-arrow">▶</span>
