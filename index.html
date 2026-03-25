@@ -115,7 +115,7 @@ body {
 .mu-colors { display: flex; gap: 2px; flex-shrink: 0; }
 .mu-colors .ms { font-size: 14px; }
 .opp-plan { background: transparent; border: none; border-radius: 0; padding: 0; margin-bottom: 0; }
-.opp-plan-head { font-size: 11px; font-weight: 600; color: #a08030; margin-bottom: 6px; display: none; }
+.opp-plan-head { display: none; }
 .opp-plan-label { font-size: 10px; font-weight: 600; color: #666; margin-top: 5px; }
 .opp-plan-in { font-size: 11px; color: #5a8a5a; margin: 2px 0; }
 .opp-plan-out { font-size: 11px; color: #8a5a5a; margin: 2px 0; }
@@ -662,10 +662,10 @@ body {
       <div class="enemy-body">
         <div class="enemy-sub">What They Bring In</div>
 <div class="opp-plan">
-      <div class="opp-plan-head">What Amulet Brings In Against You <span class="opp-sb-src">Draftsim / MTG Decks</span></div>
+      <div class="opp-plan-head">What Amulet Brings In Against You</div>
       <div class="opp-plan-in">IN: +3 Dismember, +2 Fire Magic</div>
-      <div class="opp-plan-out">OUT: -3 Arboreal Grazer, -2 Explore</div>
-      <div class="opp-plan-note">They shift from ramp to removal + combo. Fire Magic sweeps your small creatures. Expect fewer blockers, faster Titans.</div>
+      <div class="opp-plan-out">OUT: -3 Arboreal Grazer, -2 Explore/Scapeshift trim</div>
+      <div class="opp-plan-note"><b>Matchup: They're favored.</b> They shift from ramp to removal + combo. Fire Magic sweeps your small creatures, Dismember handles anything bigger. Boros has no clean answer to Amulet of Vigor or Spelunking. Your best plan: Obsidian Charmaw, Molten Rain, go full aggro. Phlage is too slow — cut it.</div>
       </div>
 <div class="enemy-sub">Their Sideboard</div>
 <div class="opp-sb">
@@ -1427,8 +1427,8 @@ body {
       <div class="enemy-body">
         <div class="enemy-sub">What They Bring In</div>
 <div class="opp-plan">
-      <div class="opp-plan-head">What Ruby Storm Brings In Against You <span class="opp-sb-src">Reverse-engineered from Boros guides</span></div>
-      <div class="opp-plan-note">Expect Prismatic Ending (hits Deafening Silence, Drannith Magistrate), Orim's Chant (stops your interaction on combo turn), Brotherhood's End (sweeps your board), Wear // Tear (answers hate pieces). They cut slow cards and lean into speed + answers for your hate.</div>
+      <div class="opp-plan-head">What Ruby Storm Brings In Against You</div>
+      <div class="opp-plan-note"><b>Matchup: They're favored.</b> Turn 2-3 kill potential makes your interaction too slow G1. They bring Prismatic Ending (hits Deafening Silence, Drannith Magistrate), Orim's Chant (stops your interaction on combo turn), Brotherhood's End (sweeps your board), Wear // Tear (hits Ruby Medallion). A resolved Damping Sphere is NOT an auto-win — they're prepared for hate. Your best tools: Orim's Chant (best card — stops combo cold), Deafening Silence, Wear // Tear on Ruby Medallion.</div>
       </div>
 <div class="enemy-sub">Their Sideboard</div>
 <div class="opp-sb">
@@ -2045,7 +2045,12 @@ body {
         <span class="enemy-arrow">▶</span>
       </div>
       <div class="enemy-body">
-        <div class="enemy-sub">Their Sideboard</div>
+
+        <div class="enemy-sub">What They Bring In</div>
+<div class="opp-plan">
+        <div class="opp-plan-head">What Domain Zoo Brings In Against You</div>
+        <div class="opp-plan-note"><b>Matchup: You're favored (56% win rate).</b> They struggle post-board — your Consign to Memory counters Scion of Draco for 1 mana. Their best angle is Leyline of the Guildpact + Draco game 1. Watch for Leyline Binding on your key threats. Answer Guide of Souls quickly to prevent lifegain snowball. Their creatures are bigger but your interaction is better.</div>
+        </div>        <div class="enemy-sub">Their Sideboard</div>
 <div class="opp-sb">
       <div class="opp-sb-head">Typical Domain Zoo Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">2x Consign to Memory <span class="opp-pct">93%</span></span> <span class="opp-card">1x Wear // Tear <span class="opp-pct">87%</span></span> <span class="opp-card">2x Damping Sphere <span class="opp-pct">83%</span></span> <span class="opp-card">2x Wrath of the Skies <span class="opp-pct">83%</span></span> <span class="opp-card">2x Mystical Dispute <span class="opp-pct">79%</span></span> <span class="opp-card">1x Nihil Spellbomb <span class="opp-pct">69%</span></span> <span class="opp-card dim">2x Obsidian Charmaw <span class="opp-pct">48%</span></span> <span class="opp-card dim">2x Surgical Extraction <span class="opp-pct">44%</span></span> <span class="opp-card dim">2x Pyroclasm <span class="opp-pct">35%</span></span></div>
@@ -2662,14 +2667,14 @@ body {
       <div class="enemy-body">
         <div class="enemy-sub">What They Bring In</div>
 <div class="opp-plan">
-      <div class="opp-plan-head">What Goryo's Brings In Against You <span class="opp-sb-src">RIW Hobbies + Hareruya</span></div>
-      <div class="opp-plan-label">RIW Hobbies</div>
+      <div class="opp-plan-head">What Goryo's Brings In Against You</div>
+      <div class="opp-plan-label">RIW Hobbies (Vinnie Fino)</div>
       <div class="opp-plan-in">IN: +2 Celestial Purge, +1 Fatal Push, +1 Toxic Deluge, +1 Force of Negation, +1 Supreme Verdict, +2 Wrath of the Skies</div>
       <div class="opp-plan-out">OUT: -3 Psychic Frog, -2 Priest of Fell Rites, -1 Griselbrand, -2 Grief</div>
-      <div class="opp-plan-label">Hareruya</div>
+      <div class="opp-plan-label">Hareruya (Pro Tour)</div>
       <div class="opp-plan-in">IN: +2 Wrath of the Skies, +1 Pest Control, +1 Celestial Purge, +1 Emperor of Bones</div>
       <div class="opp-plan-out">OUT: -2 Thoughtseize, -1 Spell Pierce, -1 Consign to Memory, -1 Griselbrand</div>
-      <div class="opp-plan-note">They shift to a control plan post-board, not combo. Keep Force of Negation for your Blood Moon. They consider this one of their better matchups.</div>
+      <div class="opp-plan-note"><b>Matchup: They're favored.</b> They shift to a control plan post-board — cut combo pieces, bring wraths. Blood Moon is THE card they fear most ("the top card to respect" — RIW Hobbies). Keep Force of Negation for Blood Moon. They may cast Goryo's on YOUR turn to dodge Surgical Extraction with FoN backup.</div>
       </div>
 <div class="enemy-sub">Their Sideboard</div>
 <div class="opp-sb">
@@ -2937,8 +2942,8 @@ body {
       <div class="enemy-body">
         <div class="enemy-sub">What They Bring In</div>
 <div class="opp-plan">
-      <div class="opp-plan-head">What Affinity Brings In Against You <span class="opp-sb-src">MTG Decks</span></div>
-      <div class="opp-plan-note">Expect Galvanic Blast (removal + reach), Whipflare (sweeps your x/1s and x/2s), and possibly Blood Moon. They keep Metallic Rebuke for your key spells. Kappa Cannoneer and Urza's Saga are their hardest-to-answer threats.</div>
+      <div class="opp-plan-head">What Affinity Brings In Against You</div>
+      <div class="opp-plan-note"><b>Matchup: Slightly Affinity-favored.</b> Kappa Cannoneer + Urza's Saga are extremely hard to answer. They bring Galvanic Blast (removal + reach), Whipflare (sweeps your x/1s and x/2s), possibly Blood Moon. They keep Metallic Rebuke for your key spells. Per RIW Hobbies: "Finding the right amount of artifacts post-board is what separates good from great Affinity pilots." Your Goblin Bombardment can steal games — don't let them slow-roll.</div>
       </div>
 <div class="enemy-sub">Their Sideboard</div>
 <div class="opp-sb">
@@ -3071,8 +3076,8 @@ body {
       <div class="enemy-body">
         <div class="enemy-sub">What They Bring In</div>
 <div class="opp-plan">
-      <div class="opp-plan-head">What Eldrazi Tron Brings In Against You <span class="opp-sb-src">Cardsrealm / MTG Decks</span></div>
-      <div class="opp-plan-note">They typically don't sideboard much — Karn wishboard gives them flexibility already. Chalice of the Void on 1 is devastating. Watch for Trinisphere and All Is Dust.</div>
+      <div class="opp-plan-head">What Eldrazi Tron Brings In Against You</div>
+      <div class="opp-plan-note"><b>Matchup: They're favored (improved after Amped Raptor ban).</b> They barely sideboard — Karn wishboard gives them Game 1 access to silver bullets. Chalice of the Void on 1 is devastating. All Is Dust wipes your board. Your best tools: Obsidian Charmaw, Wear // Tear, Molten Rain. Watch for Trinisphere (shuts off your 1-drops). Survive early Ragavan pressure is their main concern.</div>
       </div>
 <div class="enemy-sub">Their Sideboard</div>
 <div class="opp-sb">
@@ -3179,7 +3184,12 @@ body {
         <span class="enemy-arrow">▶</span>
       </div>
       <div class="enemy-body">
-        <div class="enemy-sub">Their Sideboard</div>
+
+        <div class="enemy-sub">What They Bring In</div>
+<div class="opp-plan">
+        <div class="opp-plan-head">What Neobrand Brings In Against You</div>
+        <div class="opp-plan-note"><b>Matchup: They're favored G1, closer post-board.</b> They bring in Veil of Summer and creature-based threats (Hooting Mandrills, Hexdrinker) to fight through your hate. Into the Flood Maw and Colossal Skyturtle stall your aggression. Your best tools: Containment Priest (stops Neoform/Evolution), Orim's Chant (locks them out on combo turn), Celestial Purge. Play around their Consign to Memory and Pact of Negation.</div>
+        </div>        <div class="enemy-sub">Their Sideboard</div>
 <div class="opp-sb">
       <div class="opp-sb-head">Typical Neobrand Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
       <div class="opp-sb-cards"><span class="opp-card">3x Mystical Dispute <span class="opp-pct">89%</span></span> <span class="opp-card">1x Hooting Mandrills <span class="opp-pct">75%</span></span> <span class="opp-card">1x Elesh Norn, Grand Cenobite <span class="opp-pct">75%</span></span> <span class="opp-card">3x Nature's Claim <span class="opp-pct">74%</span></span> <span class="opp-card">1x Into the Flood Maw <span class="opp-pct">64%</span></span> <span class="opp-card">2x Veil of Summer <span class="opp-pct">64%</span></span> <span class="opp-card">4x Ice-Fang Coatl <span class="opp-pct">52%</span></span> <span class="opp-card">1x Abhorrent Oculus <span class="opp-pct">52%</span></span></div>
@@ -3379,9 +3389,9 @@ body {
       <div class="enemy-body">
         <div class="enemy-sub">What They Bring In</div>
 <div class="opp-plan">
-      <div class="opp-plan-head">What Living End Brings In Against You <span class="opp-sb-src">General patterns</span></div>
-      <div class="opp-plan-note">Living End typically keeps core cascade plan intact vs creature decks. Expect Foundation Breaker for your hate pieces (Soul-Guide Lantern, Ghost Vacuum). Mystical Dispute counters your key spells. Force of Negation stays in to stop Blood Moon. Their Endurance and Subtlety are already mainboard answers to your threats.</div>
-    </div>
+      <div class="opp-plan-head">What Living End Brings In Against You</div>
+      <div class="opp-plan-note"><b>Matchup: They're favored.</b> "If you want to beat Energy, look no further." They board in Foundation Breaker (answers your graveyard hate), keep Force of Negation for Blood Moon. They may cut Grief and trim Shardless Agent, pivoting to a flash strategy with Subtlety + Endurance. Your best tools: Tormod's Crypt, Ghost Vacuum, Blood Moon, Deafening Silence. Graveyard hate only nerfs them — Foundation Breaker answers it cleanly.</div>
+      </div>
 <div class="enemy-sub">Their Sideboard</div>
 <div class="opp-sb">
       <div class="opp-sb-head">Typical Living End Sideboard <span class="opp-sb-src">MTGGoldfish avg</span></div>
